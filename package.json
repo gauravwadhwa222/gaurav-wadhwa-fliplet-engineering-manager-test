@@ -1,0 +1,27 @@
+{
+  "name": "gaurav-wadhwa-fliplet-engineering-manager-test",
+  "version": "1.0.0",
+  "description": "This test is designed to evaluate your technical skills, problem-solving abilities, and critical thinking as an engineering manager at Fliplet. You will be working on a series of tasks that cover both backend and frontend development, as well as reviewing product requirements and providing written explanations for various scenarios.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravwadhwa222/gaurav-wadhwa-fliplet-engineering-manager-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gauravwadhwa222/gaurav-wadhwa-fliplet-engineering-manager-test/issues"
+  },
+  "homepage": "https://github.com/gauravwadhwa222/gaurav-wadhwa-fliplet-engineering-manager-test#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
