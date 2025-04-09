@@ -29,3 +29,35 @@ Yes, in a few instances:
 2. Claude - For architectural decisions and technical guidance
 
 ## 📜 AI Prompts Used
+
+### Task 1: JavaScript/TypeScript Performance Task
+**Initial Prompt:**
+"Please analyze the user processing task and suggest an optimized solution that:
+1. Handles large datasets efficiently (10M+ users)
+2. Implements proper deduplication
+3. Optimizes API calls for performance
+4. Includes comprehensive error handling
+5. Provides detailed performance metrics
+
+Please include:
+- Technical architecture decisions
+- Code optimization strategies
+- Performance benchmarks
+- Error handling approach
+- Testing strategy"
+
+**Follow-up Prompt:**
+"Please implement the solution with:
+1. Memory-efficient data structures
+2. Batch processing for API calls
+3. Proper error handling and logging
+4. Performance monitoring
+5. Comprehensive test cases"
+
+**Testing Prompt:**
+"Please create test cases that:
+1. Validate performance with large datasets
+2. Test edge cases and error scenarios
+3. Measure memory usage and processing time
+4. Verify data integrity
+5. Include concurrent request handling"
