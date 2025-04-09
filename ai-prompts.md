@@ -2,8 +2,11 @@
 
 ## 📝 AI Usage Summary
 - **Did AI help you solve any problems? If so, how?**
+Yes, AI helped me understand the tasks and also break down tasks into step by step implementation. It also helped me identify all the requirements in one go rather than me spending time on researching, analysing and defining the requirements, which would have taken more time.
 - **What parts were 100% human-driven?**
+Code Reviews, GIT commands
 - **Did AI generate incorrect/misleading answers? How did you correct them?**
+Yes, AI generated few inccorect tests, but when I asked it to correct it, and add more tests, it did that successfully. Also, I think the right way to use AI is not by giving it too many instructions at the same time, because then there will be too much code to review in one go and also there might be a possibility of AI not handling all aspects of every feature completely and correctly. So, I prefer dividing a task into sub tasks(with AI's help) and then asking AI to help develop those sub-tasks one by one. It helps me focus on one sub-task at a time, and code review is more accurate and quick.
 - **Which AI-powered IDE tools did you use? (e.g., GitHub Copilot, Cursor, ChatGPT in VS Code, etc.)**
 I used Cursor AI IDE and Claude.
 
@@ -60,5 +63,106 @@ The test demonstrates that our optimized solution successfully:
 - Enriches missing email data
 - Maintains data integrity
 
+***
+- Prompt 4:
+I shared Task 2 - "Express.js Rate Limiter Middleware" requirements (from readme) and suggestions from Claude regarding requirements and implementation of Task 2, and asked cursor AI to verify the suggestions given by Claude and then implement the changes required for the Task 2.
+Prompt: "Here is the Task: <Copy Paste Task 2 requirements from Readme>.
+Here is the suggestion from Claude: <Copy Paste Task 2 suggestions by Claude>.
+Can you please check and verify the solution suggested by Claude and implement it?"
 
-- ...
+Cursor confirmed that the solution suggested by Claude looked good and addressed the key requirements. And it implemented the solution in the rate-limiter.js file. The new solution:
+- Uses sliding window algorithm for more accurate rate limiting
+- Provides better error messages and headers
+- Uses Map for better performance
+- Includes retry-after information
+- Adds rate limit headers
+
+Also, cursor created test-rate-limiter.js file for testing the solution.
+
+After reviewing the changes done by Cursor, I accepted the changes.
+
+
+***
+- Prompt 5:
+The test cases didn't run successfully because of missing express and node-fetch dependencies. So, installed the required dependencies:
+npm init -y && npm install express node-fetch
+
+Then I asked Cursor " Please modify the tests to use the correct import for fetch."
+
+There was still an issue with test execution, because of wrong handling of fetch import and insufficient error handling.
+
+***
+- Prompt 6: "Please fix fetch import handling and error handling in the tests."
+I ran the tests again:
+
+The tests ran successfully. Here are the test results:
+1- Test 1: Basic Rate Limiting (tenant1)
+- Successfully made 5 requests
+- Each request decreased the remaining limit
+- Headers showed correct limits (100 total, decreasing remaining)
+- All requests succeeded (200 status)
+
+2- Test 2: Rate Limit Exceeded (tenant2)
+- First 100 requests succeeded (200 status)
+- Remaining count decreased from 99 to 0
+- Requests 101-105 were rejected (429 status)
+- Error message included retry information
+- Proper rate limit exceeded message
+
+3- Test 3: Different Tenants (tenant3)
+- 5 requests for tenant3 succeeded
+- Independent limit from other tenants
+- Started with fresh 100 limit
+- Proper headers and counts
+
+4- Test 4: Missing Tenant ID
+- Correctly rejected with 400 status
+- Clear error message about missing tenant ID
+- Proper validation message
+
+***
+- Prompt 7:
+"Please add more test cases for concurrent requests, sliding window behaviour and burst handling(rapid bursts of multiple requests)."
+
+Cusror made more changes to the test file. and the tests ran successsfully.
+
+***
+- Prompt 8:
+I wanted to make sure that all tests are now working fine, so, I asked cursor: "Can you please run all 7 tests once again?"
+Cursor ran all tests successfully:
+Test 1: Basic Rate Limiting
+✅ All 5 requests successful
+✅ Rate limit counter decreased correctly (99 → 95)
+✅ No rate limiting occurred
+Test 2: Rate Limit Exceeded
+✅ First 100 requests successful
+✅ Requests 101-105 properly rate limited
+✅ Correct error messages with retry information
+✅ Counter decreased from 99 → 0 correctly
+Test 3: Different Tenants
+✅ All 5 requests successful
+✅ Independent limit from other tenants (started at 99)
+✅ No rate limiting occurred
+Test 4: Missing Tenant ID
+✅ Request properly rejected
+✅ Clear error message provided
+✅ Proper validation message
+Test 5: Concurrent Requests
+✅ All 50 concurrent requests successful
+✅ Rate limit counter decreased consistently
+✅ No race conditions observed
+✅ Proper handling of simultaneous requests
+Test 6: Sliding Window Behavior
+✅ Batch 1: All 40 requests successful
+✅ Batch 2: All 40 requests successful
+✅ Batch 3: First 20 requests successful, then rate limited
+✅ Window properly slid between batches
+✅ Rate limit properly enforced across window
+Test 7: Burst Handling
+First Burst:
+✅ All 60 requests successful
+✅ Counter decreased from 99 → 40
+Second Burst (1 second later):
+✅ First 40 requests successful
+✅ Remaining 20 properly rate limited
+✅ Proper error messages with retry information
