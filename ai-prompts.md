@@ -13,14 +13,14 @@ I used Cursor AI IDE and Claude.
 ---
 
 ## 📜 AI Prompts Used
-- Prompt 1:
+**- Prompt 1:**
 First I used Claude to understand the tasks and what all requirements I need to keep in mind while completing these tasks.
 Prompt: "Can you please analyse the below mentioned tasks and suggest the requirements and Step by Step Implementation Plan?" 
 + I copy pasted the tasks mentioned in Github readme file.
 Claude gave me a list of requirements and also a step by step implementation plan.
 
 ***
-- Prompt 2:
+**- Prompt 2:**
 I then shared Task 1 - "Javascript/TypeScript Performance Task" requirements (from readme) and suggestions from Claude regarding requirements and implementation of Task 1, and asked cursor AI to verify the suggestions given by Claude and then implement the changes required for the Task 1.
 Prompt: "Here is the Task: <Copy Paste Task 1 requirements from Readme>.
 Here is the suggestion from Claude: <Copy Paste Task 1 suggestions by Claude>.
@@ -35,7 +35,7 @@ Cursor confirmed that the solution suggested by Claude looked good and addressed
 I was happy with the solution and accepted the changes.
 
 ***
-- Prompt 3:
+**- Prompt 3:**
 "I want you to test it with some sample data"
 Cursor created a test file test-processor.js
 
@@ -64,7 +64,7 @@ The test demonstrates that our optimized solution successfully:
 - Maintains data integrity
 
 ***
-- Prompt 4:
+**- Prompt 4:**
 I shared Task 2 - "Express.js Rate Limiter Middleware" requirements (from readme) and suggestions from Claude regarding requirements and implementation of Task 2, and asked cursor AI to verify the suggestions given by Claude and then implement the changes required for the Task 2.
 Prompt: "Here is the Task: <Copy Paste Task 2 requirements from Readme>.
 Here is the suggestion from Claude: <Copy Paste Task 2 suggestions by Claude>.
@@ -83,7 +83,7 @@ After reviewing the changes done by Cursor, I accepted the changes.
 
 
 ***
-- Prompt 5:
+**- Prompt 5:**
 The test cases didn't run successfully because of missing express and node-fetch dependencies. So, installed the required dependencies:
 npm init -y && npm install express node-fetch
 
@@ -92,7 +92,7 @@ Then I asked Cursor " Please modify the tests to use the correct import for fetc
 There was still an issue with test execution, because of wrong handling of fetch import and insufficient error handling.
 
 ***
-- Prompt 6: "Please fix fetch import handling and error handling in the tests."
+**- Prompt 6:** "Please fix fetch import handling and error handling in the tests."
 I ran the tests again:
 
 The tests ran successfully. Here are the test results:
@@ -121,55 +121,62 @@ The tests ran successfully. Here are the test results:
 - Proper validation message
 
 ***
-- Prompt 7:
+**- Prompt 7:**
 "Please add more test cases for concurrent requests, sliding window behaviour and burst handling(rapid bursts of multiple requests)."
 
 Cusror made more changes to the test file. and the tests ran successsfully.
 
 ***
-- Prompt 8:
+**- Prompt 8:**
 I wanted to make sure that all tests are now working fine, so, I asked cursor: "Can you please run all 7 tests once again?"
 Cursor ran all tests successfully:
+
 Test 1: Basic Rate Limiting
-✅ All 5 requests successful
-✅ Rate limit counter decreased correctly (99 → 95)
-✅ No rate limiting occurred
+- All 5 requests successful
+- Rate limit counter decreased correctly (99 → 95)
+- No rate limiting occurred
+
 Test 2: Rate Limit Exceeded
-✅ First 100 requests successful
-✅ Requests 101-105 properly rate limited
-✅ Correct error messages with retry information
-✅ Counter decreased from 99 → 0 correctly
+- First 100 requests successful
+- Requests 101-105 properly rate limited
+- Correct error messages with retry information
+- Counter decreased from 99 → 0 correctly
+
 Test 3: Different Tenants
-✅ All 5 requests successful
-✅ Independent limit from other tenants (started at 99)
-✅ No rate limiting occurred
+- All 5 requests successful
+- Independent limit from other tenants (started at 99)
+- No rate limiting occurred
+
 Test 4: Missing Tenant ID
-✅ Request properly rejected
-✅ Clear error message provided
-✅ Proper validation message
+- Request properly rejected
+- Clear error message provided
+- Proper validation message
+
 Test 5: Concurrent Requests
-✅ All 50 concurrent requests successful
-✅ Rate limit counter decreased consistently
-✅ No race conditions observed
-✅ Proper handling of simultaneous requests
+- All 50 concurrent requests successful
+- Rate limit counter decreased consistently
+- No race conditions observed
+- Proper handling of simultaneous requests
+
 Test 6: Sliding Window Behavior
-✅ Batch 1: All 40 requests successful
-✅ Batch 2: All 40 requests successful
-✅ Batch 3: First 20 requests successful, then rate limited
-✅ Window properly slid between batches
-✅ Rate limit properly enforced across window
+- Batch 1: All 40 requests successful
+- Batch 2: All 40 requests successful
+- Batch 3: First 20 requests successful, then rate limited
+- Window properly slid between batches
+- Rate limit properly enforced across window
+
 Test 7: Burst Handling
 First Burst:
-✅ All 60 requests successful
-✅ Counter decreased from 99 → 40
+- All 60 requests successful
+- Counter decreased from 99 → 40
 Second Burst (1 second later):
-✅ First 40 requests successful
-✅ Remaining 20 properly rate limited
-✅ Proper error messages with retry information
+- First 40 requests successful
+- Remaining 20 properly rate limited
+- Proper error messages with retry information
 
 
 ****
-- Prompt 8:
+**- Prompt 9:**
 I shared Task 3 - "Vue.js Drag and Drop Component" requirements (from readme) and suggestions from Claude regarding requirements and implementation of Task 2, and asked cursor AI to verify the suggestions given by Claude and then implement the changes required for the Task 2.
 Prompt: "Here is the Task: <Copy Paste Task 3 requirements from Readme>.
 Here is the suggestion from Claude: <Copy Paste Task 3 suggestions by Claude>.
