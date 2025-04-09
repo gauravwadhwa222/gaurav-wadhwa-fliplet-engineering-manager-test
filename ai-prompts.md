@@ -61,3 +61,39 @@ Please include:
 3. Measure memory usage and processing time
 4. Verify data integrity
 5. Include concurrent request handling"
+
+
+### Task 2: Express.js Rate Limiter Middleware
+**Initial Prompt:**
+"Design a rate limiter middleware that:
+1. Implements sliding window algorithm
+2. Handles concurrent requests efficiently
+3. Provides detailed rate limit headers
+4. Includes proper error handling
+5. Supports tenant-based rate limiting
+
+Please include:
+- Algorithm selection rationale
+- Performance considerations
+- Security measures
+- Error handling strategy
+- Testing approach"
+
+**Implementation Prompt:**
+"Please implement the rate limiter with:
+1. Efficient data structures for tracking requests
+2. Proper concurrency handling
+3. Comprehensive error messages
+4. Rate limit headers
+5. Tenant isolation"
+
+**Testing Prompt:**
+"Create test cases that verify:
+1. Basic rate limiting functionality
+2. Concurrent request handling
+3. Sliding window behavior
+4. Tenant isolation
+5. Error scenarios
+6. Performance under load
+7. Header information accuracy"
+
